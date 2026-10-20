@@ -21,3 +21,5 @@
 .fg-action{pointer-events:none}.fg-action button{pointer-events:auto}.factory-game{user-select:none}.factory-game input{user-select:text}.fg-drag{top:54%;height:12%}.fg-options .fg-coats img{height:6vh}.fg-coats button{padding:5px 2px}.fg-toppings button{padding:7px 2px}.fg-options:has(.fg-coats){overflow:visible}.fg-options:has(.fg-coats) h3{font-size:clamp(11px,1.1vw,17px)}
 
 .fg-share-input{width:100%;padding:12px;margin:8px 0 22px;color:#692b34;background:#fff4df;border:2px solid #d7a278;border-radius:10px;font-size:12px;user-select:text}
+
+.factory-game img[src$="product-8.webp"]{filter:hue-rotate(70deg) saturate(.7)}
