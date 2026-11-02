@@ -180,3 +180,5 @@
 .has-experience .packing-stock-row .packing-box-stock>div{min-height:0}
 .has-experience .fg-bottom button{white-space:nowrap;min-width:48px}
 }
+
+@media(max-width:760px){.factory-game.has-experience .booster-console.booster-v2{top:auto!important;bottom:13.5%!important;left:2%!important;right:2%!important;width:auto!important;max-width:none!important;height:48px!important}.factory-game.has-experience .booster-console.booster-ready{height:78px!important}.factory-game.has-experience .booster-console .booster-lever{width:100%!important;min-width:0!important;white-space:normal!important}.factory-game.has-experience .paper-fold-game .paper-workspace{min-height:100px}}
