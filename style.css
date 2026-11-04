@@ -182,3 +182,23 @@
 }
 
 @media(max-width:760px){.factory-game.has-experience .booster-console.booster-v2{top:auto!important;bottom:13.5%!important;left:2%!important;right:2%!important;width:auto!important;max-width:none!important;height:48px!important}.factory-game.has-experience .booster-console.booster-ready{height:78px!important}.factory-game.has-experience .booster-console .booster-lever{width:100%!important;min-width:0!important;white-space:normal!important}.factory-game.has-experience .paper-fold-game .paper-workspace{min-height:100px}}
+
+/* Focus only the current packing action. */
+.guide-fill .slot-next,.guide-ribbon .ribbon-ready,.guide-fold .box-needed{outline:2px solid #ffe69b;outline-offset:2px;box-shadow:0 0 12px #ffce6470!important}
+.customer-slots .slot-incorrect{outline:2px solid #ff738a;box-shadow:inset 0 0 14px #ef355566}
+.guide-fold .customer-tray .order-needed{box-shadow:none!important}
+.guide-ribbon .customer-tray{filter:brightness(.85)}
+.team-result-summary{border:1px solid #d5a575;border-radius:15px;background:#3c2031dc;color:#ffe2b5;padding:10px;margin:8px auto;max-width:780px}
+.team-result-summary h2{font-size:17px;margin:3px}.team-result-summary p{font-size:14px;margin:5px}.team-result-summary ul{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:0;list-style:none;font-size:12px}.team-result-summary small{font-size:10px}.fg-results{overflow:auto}
+@media(max-width:760px){.team-result-summary h2{font-size:13px}.team-result-summary p{font-size:11px}.team-result-summary ul{font-size:10px}}
+
+.customer-holding .customer-slots button.empty:not(.slot-next){animation:none;box-shadow:none;border-color:#ba915f}
+.guide-fill .customer-slots .slot-next{animation:packing-focus 1.4s ease-in-out infinite alternate}
+@keyframes packing-focus{to{outline-color:#ffcb65;filter:brightness(1.08)}}
+@media(prefers-reduced-motion:reduce){.guide-fill .customer-slots .slot-next{animation:none}}
+
+.manual-brush-field{touch-action:none;contain:layout paint}.manual-hand,.brush-gloss{pointer-events:none;transition:none!important}.manual-hand{will-change:left,top}.manual-stick{pointer-events:none}
+
+.dough-rolling{display:flex;flex-direction:column;gap:8px}.dough-rolling h3{font-size:clamp(15px,1.8vw,25px);color:#ffe4a9;margin:3px}.rolling-worktop{position:relative;flex:1;min-height:140px;overflow:hidden;touch-action:none;border:5px ridge #b97942;border-radius:18px;background:repeating-linear-gradient(2deg,#a66c3e 0,#ba8050 3px,#c28a56 6px,#a66c3e 9px);box-shadow:inset 0 12px 18px #3d211866}.rolling-dough{position:absolute;left:25%;right:25%;top:15%;bottom:12%;border-radius:45%;background:radial-gradient(ellipse at 35% 25%,#ffe8b0,#eec476 55%,#bd873e);border:2px solid #f4d391;box-shadow:inset 0 5px 10px #fff0c4,0 10px 10px #59361577;transition:transform .3s}.rolling-dough:after{content:'';position:absolute;inset:8%;border-radius:inherit;background:radial-gradient(#fff5da77 1px,transparent 2px);background-size:13px 11px}.rolling-pin{position:absolute;left:50%;top:55%;width:56%;height:42px;translate:-50% -50%;display:flex;align-items:center;touch-action:none;cursor:grab;filter:drop-shadow(0 8px 5px #43231480)}.rolling-pin b{height:100%;width:80%;border-radius:15px;background:linear-gradient(#8c4720,#f1c18a 20%,#d99b5b 45%,#ac6832 80%,#67371f);border:2px solid #e2b37d;box-shadow:inset 0 2px #ffe3b3}.rolling-pin i{width:10%;height:18px;border-radius:12px;background:linear-gradient(#e3b47e,#a66731,#70401f)}.rolling-held{cursor:grabbing}.rolling-arrows{position:absolute;top:6%;left:18%;right:18%;font-size:25px;text-align:center;color:#fff0b9;pointer-events:none}.rolling-progress{display:flex;gap:8px;justify-content:center}.rolling-progress span{border:1px solid #c09363;border-radius:25px;padding:4px 18px;color:#e7bd93}.rolling-progress .done{background:#39745a;color:#fff0ad}.events-blocked .dough-rolling{visibility:hidden;pointer-events:none}@media(max-width:760px){.rolling-pin{height:30px;width:72%}.rolling-arrows{font-size:18px}.rolling-worktop{min-height:120px}.dough-rolling p{font-size:10px}}@media(prefers-reduced-motion:reduce){.rolling-dough{transition:none}}
+
+.dough-rolling .rolling-worktop{width:100%;box-sizing:border-box;align-self:stretch}.dough-rolling>header{width:100%}.dough-rolling .rolling-pin{min-width:180px}
