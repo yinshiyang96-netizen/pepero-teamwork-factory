@@ -207,3 +207,6 @@
 
 /* Product identity must survive tray and slot presentation filters. */
 .factory-game .customer-game img[src$="product-8.webp"],.factory-game .gift-drag-hand img[src$="product-8.webp"]{filter:hue-rotate(70deg) saturate(.7) drop-shadow(0 3px 2px #21131a66)!important}
+
+/* Folding is guided by the active flap; no detached static cursor. */
+.paper-fold-game .paper-guide-hand{display:none!important}
