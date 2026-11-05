@@ -210,3 +210,27 @@
 
 /* Folding is guided by the active flap; no detached static cursor. */
 .paper-fold-game .paper-guide-hand{display:none!important}
+
+/* PC mouse rolling: keep the wooden pin horizontal and move only its Y transform. */
+.rolling-vertical{padding:16px 24px!important;gap:8px!important;}
+.rolling-vertical h3{font-size:clamp(22px,2vw,34px);margin:4px 0;color:#ffe7a2;text-shadow:0 3px #502119;}
+.rolling-vertical .rolling-subtitle{margin:0;padding:5px 24px;background:#ffdaa0;color:#481d25;border-radius:22px;font-weight:800;}
+.rolling-instructions{display:flex;gap:12px;counter-reset:roll;list-style:none;margin:4px 0;padding:0;width:100%;}
+.rolling-instructions li{flex:1;padding:9px;border:1px solid #ce9b59;border-radius:12px;background:#522332;font-size:14px;text-align:center;}
+.rolling-vertical .rolling-worktop{height:clamp(190px,25vh,290px);min-height:190px;position:relative;width:100%;overflow:hidden;}
+.rolling-vertical .rolling-dough{left:18%;top:16%;width:64%;height:69%;transition:transform .35s ease;box-shadow:0 8px 10px #2b0e1755,inset 0 0 24px #fff0ac;}
+.rolling-vertical .rolling-pin{left:50%!important;top:50%;width:48%;max-width:520px;transform:translate(-50%,-50%);cursor:grab;touch-action:auto;user-select:none;z-index:3;will-change:top;}
+.rolling-vertical .rolling-pin b{color:#97511e;font-size:27px;text-align:center;}
+.rolling-vertical .rolling-held{cursor:grabbing;}
+.rolling-route{position:absolute;inset:10% 44%;border:2px dashed #fff2b7;border-radius:24px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;color:#fff;pointer-events:none;}
+.rolling-route span{background:#ce345f;border:1px solid #ffe5a2;border-radius:15px;padding:3px 10px;white-space:nowrap;font-size:13px;}
+.rolling-route b{font-size:35px;line-height:1.15;color:#ff7db0;text-shadow:0 0 6px #ff5c9b;}
+.rolling-vertical .rolling-progress{width:85%;display:flex;gap:8px;}
+.rolling-vertical .rolling-progress span{flex:1;border:1px solid #ffdeb3;border-radius:15px;background:#603044;}
+.rolling-vertical .rolling-progress .done{background:#f54888;box-shadow:0 0 8px #ff80ae;}
+@media(max-height:800px){.rolling-vertical{padding:10px 18px!important;gap:4px!important}.rolling-vertical .rolling-worktop{height:190px}.rolling-instructions li{padding:5px;font-size:12px}.rolling-vertical h3{font-size:24px}.rolling-vertical p{font-size:13px}}
+
+.rolling-vertical .rolling-pin{transform:none;translate:-50% -50%;}
+.rolling-vertical .rolling-worktop{flex:none;}
+.rolling-vertical{top:30%!important;bottom:14%!important;height:auto!important;max-height:none!important;justify-content:center;}
+@media(max-height:800px){.rolling-vertical{top:30%!important;bottom:14%!important}.rolling-vertical .rolling-worktop{height:145px;min-height:145px}.rolling-vertical .rolling-pin{height:32px}.rolling-vertical h3{font-size:20px}.rolling-vertical .rolling-subtitle{padding:2px 12px}.rolling-vertical .rolling-progress span{padding:2px 8px}.rolling-vertical>p:last-child{font-size:11px;margin:2px}.rolling-instructions{margin:0}}
