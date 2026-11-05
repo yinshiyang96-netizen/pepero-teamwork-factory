@@ -238,3 +238,33 @@
 .rolling-vertical .rolling-route{inset:17% 44%;}
 .rolling-vertical .rolling-worktop:before{content:'';position:absolute;inset:8% 8%;pointer-events:none;background:radial-gradient(circle,#fff9dfbb 0 1px,transparent 2px);background-size:19px 17px;opacity:.45;mask-image:radial-gradient(ellipse,transparent 35%,#000 62%,transparent 74%);}
 .rolling-vertical .rolling-route b{font-size:20px;line-height:1.05}.rolling-vertical .rolling-route span{font-size:11px;padding:2px 8px}
+
+/* Connected extrusion scene. Pressure marker remains the existing server-timed game. */
+.roller-production{isolation:isolate;min-height:100px;--forming:0;background:radial-gradient(ellipse at 50% 80%,#bb684433,transparent 70%);}
+.roller-production .press-feed-machine{position:absolute;left:0;top:0;width:37%;height:90%;z-index:3;overflow:hidden;}
+.roller-production .press-feed-machine>img{position:absolute;left:0;top:-20%;width:100%;height:130%;object-fit:contain;opacity:1;}
+.press-outlet{position:absolute;left:70%;top:57%;height:13%;width:20%;border:3px ridge #edbc65;background:linear-gradient(#39222a,#a77a57,#26161c);border-radius:10px;}
+.roller-assembly{position:absolute;left:40%;top:14%;width:22%;height:61%;z-index:5;}
+.roller-frame{position:absolute;inset:0;border:8px ridge #b7783f;border-top:10px solid #ed82a3;border-radius:13px;background:linear-gradient(90deg,#562534,#f7a1b8 12%,#5c2338 17%,#35141f 83%,#e588a7 88%,#74324b);box-shadow:0 4px 6px #160d18;}
+.roller-cylinder{position:absolute;left:10%;right:10%;height:28%;border-radius:8px;border:2px solid #bd9152;background:linear-gradient(#69243d,#fd9abb 24%,#e45b8c 55%,#8b324f 90%);box-shadow:0 3px 5px #190e18;overflow:hidden;}
+.roller-upper{top:14%;}.roller-lower{bottom:4%;z-index:6;}
+.roller-cylinder i{position:absolute;left:0;right:0;height:2px;background:#ffd0dd77;top:10%;}.roller-cylinder i:nth-child(2){top:40%}.roller-cylinder i:nth-child(3){top:70%}
+.roller-running .roller-cylinder i{animation:roller-turn .48s linear infinite;}.roller-running .roller-lower i{animation-direction:reverse;}
+.roller-gear{position:absolute;top:27%;font-size:clamp(18px,2vw,30px);line-height:1;color:#e6b451;text-shadow:1px 2px #6e391e;}.roller-gear-left{left:-15%}.roller-gear-right{right:-15%}.roller-running .roller-gear{animation:roller-gear 1.2s linear infinite}.roller-running .roller-gear-right{animation-direction:reverse;}
+.forming-lane{position:absolute;left:27%;right:3%;top:48%;height:27%;z-index:4;pointer-events:none;}
+.press-feed-sheet{position:absolute;left:0;top:5%;width:31%;height:80%;border-radius:45%;background:radial-gradient(ellipse at 40% 20%,#fff0bf,#f3c477 60%,#c68a3d);box-shadow:inset 0 3px 4px #fff0b8,0 4px 5px #24111c;transform:translateX(calc(var(--forming)*43%)) scaleX(calc(1 - var(--forming)*.55)) scaleY(calc(1 - var(--forming)*.45));opacity:calc(1 - var(--forming)*.85);}
+.press-forming-stick{position:absolute;left:39%;top:8%;width:60%;height:76%;clip-path:inset(0 calc((1 - var(--forming))*100%) 0 0);transform-origin:left center;filter:drop-shadow(0 3px 3px #26111b);}
+.roller-production .press-forming-stick>img{position:absolute;top:50%;left:50%;width:23%;height:430%;object-fit:contain;transform:translate(-50%,-50%) rotate(90deg) scaleX(calc(1.5 - var(--forming)*.5));}
+.press-conveyor{position:absolute;left:26%;right:1%;top:72%;height:13%;border:3px ridge #a78766;border-radius:8px;background:repeating-linear-gradient(90deg,#3d3439 0 23px,#73636c 24px,#40353c 27px);z-index:2;display:flex;justify-content:space-around;align-items:flex-end;}
+.press-conveyor span{width:8px;height:8px;border-radius:50%;background:radial-gradient(circle at 30% 20%,#ffe9a2,#a66a27);transform:translateY(7px);}.press-conveyor-running{animation:press-belt .8s linear infinite;}
+.roller-caption{position:absolute;bottom:17px;left:20%;right:0;font-size:10px;color:#ffe2ab;text-align:center;}
+.roller-production .press-pressure{bottom:0;height:11px;z-index:7;}
+@keyframes roller-turn{to{transform:translateY(20px)}}@keyframes roller-gear{to{rotate:360deg}}@keyframes press-belt{to{background-position:27px 0}}
+@media(prefers-reduced-motion:reduce){.roller-running .roller-cylinder i,.roller-running .roller-gear,.press-conveyor-running{animation:none}}
+
+.roller-gear svg{width:1em;height:1em;display:block}.press-dispatch{position:absolute;z-index:12;left:49%;top:58%;width:22%;height:13%;pointer-events:none;animation:press-dispatch .7s ease-in both;display:flex;align-items:center;gap:6px;color:#ffe28d;font-size:12px;text-shadow:0 2px #451c24}.press-dispatch img{height:90%;width:30%;object-fit:contain;rotate:90deg;filter:drop-shadow(0 0 7px #ffe69b)}@keyframes press-dispatch{0%{opacity:1;transform:translateX(0)}65%{opacity:1}100%{opacity:0;transform:translateX(130px)}}@media(prefers-reduced-motion:reduce){.press-dispatch{animation:none}}
+.roller-production .press-feed-machine>img{transform:scaleX(-1)}
+
+.roller-running:after{content:'';position:absolute;inset:20% -15%;border-radius:50%;box-shadow:0 0 18px #ffd671;animation:roller-start-flash .22s ease-out both;pointer-events:none}@keyframes roller-start-flash{from{opacity:.8;transform:scale(.85)}to{opacity:0;transform:scale(1.1)}}
+
+.roller-production .press-forming-stick{left:35%}
