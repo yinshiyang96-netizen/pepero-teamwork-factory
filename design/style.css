@@ -357,3 +357,22 @@
 
 /* Coating pointer feedback stays on a compositor transform, separate from clock renders. */
 .manual-brush-field{contain:layout paint;isolation:isolate}.manual-stick,.manual-hand{filter:none}.manual-hand{will-change:transform}.manual-coating-zones .confirming{border-color:#e1bb7f;color:#ffe3ad;background:#594027}.manual-coating-zones i{transition:none!important}
+
+/* Final reference: isolated raster extruder + striped pink/silver double roller. */
+.press-reference{top:36%;bottom:14%;left:22%;right:21%;padding:14px 20px;gap:8px;border:2px solid #efbe7f;border-radius:24px;}
+.press-reference>header{color:#ffedba;font-size:clamp(18px,1.7vw,30px);}
+.press-reference .reference-production{position:relative;flex:1;min-height:100px;width:100%;isolation:isolate;--forming:0;}
+.reference-press-scene{position:absolute;inset:0;width:100%;height:calc(100% - 24px);overflow:visible;z-index:3;}
+.press-reference .press-conveyor{left:1%;right:1%;top:auto;bottom:22px;height:24px;border:1px solid #d9ad77;z-index:1;background-size:32px 100%;}
+.press-reference .press-conveyor span{height:6px;width:6px;transform:translateY(4px);}
+.press-reference .press-pressure{position:absolute;left:1%;right:1%;bottom:0;height:12px;z-index:5;}
+.reference-output-dough{transform-box:view-box;transform-origin:670px 210px;transform:scaleY(calc(.98 + var(--forming)*.02));}
+.reference-sheet-gloss{transform-box:view-box;transform-origin:670px 210px;transform:scaleY(calc(.98 + var(--forming)*.02));}
+.reference-running .reference-roller-shine rect{animation:reference-silver-turn .7s linear infinite;}.reference-running .reference-roller-shine rect:nth-child(2){animation-direction:reverse;}
+.reference-running .reference-dough-seam{animation:reference-sheet-feed .9s linear infinite;}
+.reference-running .reference-feed-dough{animation:reference-feed-breathe 1.2s ease-in-out infinite;transform-origin:326px 235px;}
+@keyframes reference-silver-turn{from{translate:0 -7px;opacity:.25}to{translate:0 46px;opacity:.05}}
+@keyframes reference-sheet-feed{from{translate:0 -20px;opacity:0}30%{opacity:.3}to{translate:0 45px;opacity:0}}
+@keyframes reference-feed-breathe{50%{scale:1 1.03}}
+@media(max-height:800px){.press-reference{top:39%;bottom:14%;padding:10px 16px;gap:5px}.press-reference .reference-production{min-height:110px}.press-reference .press-pedal{padding:8px 20px;}}
+@media(prefers-reduced-motion:reduce){.reference-running .reference-roller-shine rect,.reference-running .reference-dough-seam,.reference-running .reference-feed-dough{animation:none;}}
