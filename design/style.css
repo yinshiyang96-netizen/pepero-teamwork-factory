@@ -354,3 +354,6 @@
 .factory-game .fg-practice .special-schedule{flex:1 1 100%;font-size:10px;line-height:1.15;color:#edc9b5}.special-status small{font-size:10px;color:#edc9b5}
 
 @media(min-width:761px){.factory-game .fg-practice{display:grid;grid-template-columns:minmax(155px,1fr) repeat(4,auto);gap:4px;align-items:center}.factory-game .fg-practice>small{grid-column:1/-1;line-height:1.1}.factory-game .fg-practice .special-game-select{grid-column:1;font-size:11px;padding:5px 6px;height:30px}.factory-game .fg-practice>button{height:28px;padding:3px 5px}}
+
+/* Coating pointer feedback stays on a compositor transform, separate from clock renders. */
+.manual-brush-field{contain:layout paint;isolation:isolate}.manual-stick,.manual-hand{filter:none}.manual-hand{will-change:transform}.manual-coating-zones .confirming{border-color:#e1bb7f;color:#ffe3ad;background:#594027}.manual-coating-zones i{transition:none!important}
