@@ -392,3 +392,5 @@
 .hands-fold-game:not(.hands-dragging) .hands-fold-flap{transition:transform .24s ease-out}.hands-fold-game:not(.hands-dragging) .hands-pinching{transition:transform .24s ease-out}.hands-fold-flap:focus-visible{outline:3px solid #fff6cb;outline-offset:4px}
 
 .hands-idle .hands-stabilizing,.hands-idle .hands-pinching,.hands-idle .hands-fold-flap,.hands-idle .hands-direction{visibility:hidden}
+
+@media(min-width:1000px){.factory-game:has(.hands-fold-game):is(:has(.team-secret),:has(.arcade-event)) .customer-premium{top:36%}}
