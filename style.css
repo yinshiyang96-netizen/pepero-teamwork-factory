@@ -399,3 +399,17 @@
 
 /* Practice uses the modal surface, not the match HUD offsets. */
 .factory-game .lesson-dialog .lesson-surface > .customer-premium.packing-with-fold{inset:0;}
+
+/* Keep the practice workspace in document flow so all controls can be reached. */
+.factory-game .lesson-overlay{overflow:auto;padding:12px;box-sizing:border-box}
+.factory-game .lesson-dialog{max-width:100%;max-height:calc(100dvh - 24px);overflow:auto;box-sizing:border-box}
+.factory-game .lesson-dialog .lesson-surface{height:auto;min-height:0;overflow:visible}
+.factory-game .lesson-dialog .lesson-surface > :is(.dough-press,.coat-catch,.customer-premium.packing-with-fold){position:relative;inset:auto!important;width:100%;height:auto;min-height:0;transform:none;box-sizing:border-box}
+.factory-game .lesson-surface .rolling-worktop{flex:none;height:clamp(130px,23dvh,220px)}
+.factory-game .lesson-surface .manual-brush-field{flex:none;height:clamp(160px,28dvh,260px)}
+.factory-game .lesson-surface .press-machine{height:clamp(140px,25dvh,240px)}
+.factory-game .lesson-surface .customer-main{height:auto;min-height:420px}
+.factory-game .lesson-surface .packing-stock-row{flex:none;flex-wrap:wrap;height:auto;max-height:none;min-height:0}
+.factory-game .lesson-surface .packing-stock-row > :is(.customer-tray,.packing-box-stock){display:flex;flex:1 1 240px;height:auto;min-height:95px;max-height:none;overflow:auto}
+.factory-game .lesson-surface .packing-box-stock{flex-direction:column}
+.factory-game .lesson-surface .paper-fold-game{min-height:290px}
